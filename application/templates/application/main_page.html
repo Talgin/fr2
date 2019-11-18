@@ -1,0 +1,95 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Events</title>
+    <link rel="icon" type="image/png" href="{% static 'images/Untitled-Artwork.png' %}" sizes="64x64"/>
+    <link rel="stylesheet" href="{% static 'bootstrap-4.2.1-dist/css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'fontawesome-free-5.11.2-web/css/all.css' %}" >
+    <link rel="stylesheet" href="{% static 'bootstrap-table-master/dist/bootstrap-table.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body class="body_class_main">
+  <div class="row" style="margin:0px;">
+    <div class="col-1">
+    <!--Navbar-->
+    <nav class="navbar navbar-dark purple lighten-4 mb-4" style="padding:0px;">
+
+      <!-- Navbar brand -->
+      <a class="navbar-brand" href="{% url 'index' pk=1 %}"><img src="{% static 'images/Artwork.png'%}" alt="logo image" style="width:150px;"></a>
+
+      <div style="padding-left:18px;">
+      <!-- Collapse button -->
+      <button class="navbar-toggler toggler-example darken-3" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent41" aria-controls="navbarSupportedContent41" aria-expanded="false"
+        aria-label="Toggle navigation" style="background-color:#D93D04; width:110px;"><span class="white-text"><i class="fas fa-bars fa-1x"></i></span></button>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent41">
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto navbar_css_style" >
+          <li class="nav-item active">
+            <a class="nav-link text_style_ul" href="{% url 'index' pk=1 %}">Live Stream<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text_style_ul" href="#">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text_style_ul" href="#">Admin Panel</a>
+          </li>
+        </ul>
+        <!-- Links -->
+
+      </div>
+      <!-- Collapsible content -->
+
+    </div>
+
+    </nav>
+    <!--/.Navbar-->
+    </div>
+    <div class="col-9">
+      <table
+        class="table table-dark table-striped"
+        style="text-align:center;"
+        id="table"
+        data-show-refresh="true"
+        data-auto-refresh="true"
+        data-align="center"
+        data-height="800"
+        data-url="http://{{ip}}:8000/snippet_list/{{pk}}"
+        data-only-info-pagination="true"
+      >
+        <thead style="text-align:center;">
+          <tr>
+            <th data-field="detected" data-sortable="false">DETECTED</th>
+            <th data-field="matched" data-sortable="false">MATCHED TO</th>
+            <th data-field="confidence" data-sortable="false">%</th>
+            <th data-field="date" data-sortable="false">DATE</th>
+          </tr>
+        </thead>
+      </table>
+      <div class="center">
+        <div class="pagination">
+          <a href="/main_page/1"><i class="fas fa-fast-backward"></i></a>
+          <a href="#" id="previous_page_id"><i class="fas fa-backward"></i></a>
+          <a class="active" href="#" id="current_page_id"></a>
+          <a href="#" id="next_page_id"><i class="fas fa-forward"></i></a>
+        </div>
+      </div>
+      </div>
+      <div class="col-2"></div>
+   </div>
+    <script src="{% static 'jquery/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'popper.js-1.14.6/dist/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap-4.2.1-dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'bootstrap-table-master/dist/bootstrap-table.min.js' %}"></script>
+    <script src="{% static 'bootstrap-table-master/src/extensions/auto-refresh/bootstrap-table-auto-refresh.js' %}"></script>
+    <script src="{% static 'javascript/script_base.js' %}"></script>
+
+  </body>
+</html>

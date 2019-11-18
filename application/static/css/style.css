@@ -1,0 +1,79 @@
+.word_break_class {
+    word-break: break-word;
+}
+.image_res {
+    width:157px;
+    height:157px;
+}
+.center {
+    text-align: center;
+    padding-top:20px;
+}
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+}
+
+.pagination a.active {
+    background-color: #545b62;
+    color: white;
+    border: 1px solid #545b62;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+.pagination a:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.pagination a:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.fa, .fas {
+    color: #D93D04;
+}
+.fa-1x {
+    color: black;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #2d3034;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #D93D04;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #731D0A;
+}
+.text_style_ul{
+    font-family: "Courier New", Courier;
+    padding-top: 3px;
+    line-height: 1;
+}
+.body_class_main {
+    background-color:#212529;
+}
+.navbar_css_style {
+    background-color:#D93D04;
+    padding-left:5px;
+    font-size: 22px;
+}

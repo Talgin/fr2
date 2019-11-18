@@ -1,0 +1,94 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="icon" type="image/png" href="{% static 'images/Untitled-Artwork.png' %}" sizes="64x64"/>
+    <link rel="stylesheet" href="{% static 'bootstrap-4.2.1-dist/css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'fontawesome-free-5.11.2-web/css/all.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Detail View</title>
+  </head>
+  <body class="body_class_main">
+<div class="row" style="margin:0px;">
+    <div class="col-1" style="padding-top:5px;">
+        <a href="{% url 'index' pk=1 %}" style=""><img class="img-fluid rounded mx-auto d-block" src="{% static 'images/Artwork.png'%}" alt="logo image" style="width:180px;"></a>
+    <nav class="navbar navbar-dark purple lighten-4 mb-4" style="padding:0px;">
+      <div style="padding-left:5px;">
+      <button class="navbar-toggler toggler-example darken-3" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent41" aria-controls="navbarSupportedContent41" aria-expanded="false"
+        aria-label="Toggle navigation" style="background-color:#D93D04; width:120px;"><span class="white-text"><i class="fas fa-bars fa-1x"></i></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent41">
+        <ul class="navbar-nav mr-auto navbar_css_style" >
+          <li class="nav-item">
+            <a class="nav-link text_style_ul" href="{% url 'index' pk=1 %}">Live Stream</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text_style_ul" href="#">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text_style_ul" href="#">Admin Panel</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+    </div>
+<div class="col-9">
+  <h1>Detail Views</h1>
+<button onclick="goBack()">Go Back  <i class="fas fa-undo"></i></button>
+    <br>
+    <br>
+<span class="pop">
+    <img src="{{path}}" style="width: 20%;">
+</span>
+{% if name %}
+<p style="padding-top:20px; color:white;">Image from DB</p>
+
+<span class="pop">
+    <img src="/static/folders/db/{{name}}.jpg" style="width: 50%;">
+</span>
+<p style="color:white;">Probability: {{prob}}</p>
+{%endif%}
+
+
+<p style="color:white;">Camera Address: 10.150.30.207:554 </p>
+<p style="color:white;">Time: {{time}}</p>
+
+
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+      	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <img src="" class="imagepreview" style="width:100%;" >
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="col-2"></div>
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'jquery/jquery-3.2.1.slim.min.js' %}"></script>
+    <script src="{% static 'popper.js-1.14.6/dist/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap-4.2.1-dist/js/bootstrap.min.js' %}"></script>
+
+    <script>
+        function goBack() {
+           window.history.back();
+        };
+      $(function() {
+		$('.pop').on('click', function() {
+			$('.imagepreview').attr('src', '/static/folders/first/{{image_id}}');
+			$('#imagemodal').modal('show');
+		});
+      });
+    </script>
+  </body>
+</html>

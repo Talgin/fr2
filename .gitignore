@@ -1,0 +1,9 @@
+# Ignore .pyc from python scripts
+*.pyc
+# Ignore recognition model as it is too large
+/models/recognition/model-0000.params
+/models/recognition/model-symbol.json
+/models/recognition/log
+# Ignore detection model as it is too large
+/models/detection/R50-0000.params
+/models/detection/R50-symbol.json
